@@ -15,6 +15,7 @@
   <div class="container text-center">
     <h2>File Upload</h2>
     <h3 class="message"></h3>
+
     <form id="uploadForm" enctype="multipart/form-data">
       <input type="file" name="file" class="form-control"><br>
       <div class="w-25 m-auto mb-3">
@@ -23,6 +24,7 @@
       <button type="submit" name="submit" class="btn btn-info w-25 m-auto">Upload</button><br>
       <p href="" class="linkFile mt-5"></p>
     </form>
+
   </div>
 </body>
 </html>

@@ -1,33 +1,28 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Upload</title>
-  <!-- Css link  -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>File Upload with Progress Bar</title>
+<!-- Css link  -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
   integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <!-- Jquery link -->
-  <script src="jquery.js"></script>
+  <!-- Jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="style.js"></script>
 </head>
 <body>
-
   <div class="container text-center">
-    <div class="mt-5">
-      <!-- Message -->
-      <h2 class="text-center text-success"><?php echo (isset($_SESSION['message'])) ? $_SESSION['message'] . " uploaded successfully" : ''; session_unset(); ?></h2>
-
-      <form action="loader.php" method="get" enctype="multipart/form-data">
-        <input type="file" name="file" id="file" class="form-control mt-3 w-50 m-auto"><br>
-        <button type="submit" id="submit" name="submit" class="btn btn-primary w-25 m-auto">Upload</button>
-      </form>
-    </div>
+    <h2>File Upload</h2>
+    <h3 class="message"></h3>
+    <form id="uploadForm" enctype="multipart/form-data">
+      <input type="file" name="file" class="form-control"><br>
+      <div class="w-25 m-auto mb-3">
+        <div class="text-light bg-primary" id="progressBar" style="width: 0%;">0%</div>
+      </div>
+      <button type="submit" name="submit" class="btn btn-info w-25 m-auto">Upload</button><br>
+      <p href="" class="linkFile mt-5"></p>
+    </form>
   </div>
-
-  <!-- Jquery style -->
-  <script>
-
-  </script>
 </body>
 </html>
